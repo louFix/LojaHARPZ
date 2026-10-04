@@ -1,0 +1,202 @@
+/* ---------- Reset e variáveis ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --azul: #588EF0;
+    --fundo: #f5f5f5;
+}
+
+body {
+    background: var(--fundo);
+    min-height: 100vh;
+}
+
+/* ---------- Barra superior ---------- */
+.topo {
+    background: var(--azul);
+    color: white;
+    padding: 16px 40px;
+}
+
+/* Linha 1: logo + busca + promo */
+.topo-principal {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.busca {
+    flex: 1;
+    display: flex;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.busca input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+
+.busca button {
+    border: none;
+    border-left: 1px solid #eee;
+    background: #fff;
+    padding: 0 18px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.promo {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* Linha 2: menu */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.menu a:hover {
+    opacity: 1;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* ---------- Botão do carrinho ---------- */
+.usuario {
+    align-items: center;
+}
+
+.btn-carrinho {
+    padding: 2px;
+    border: none;
+    background: none;
+    color: white;
+    opacity: 0.85;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.2s;
+}
+
+.btn-carrinho:hover {
+    opacity: 1;
+}
+
+.btn-carrinho:active {
+    transform: scale(0.92);
+}
+
+.btn-carrinho:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.btn-carrinho svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- Hero: azul descendo até o fundo da página ---------- */
+.hero {
+    height: 450px;
+    background: linear-gradient(
+        to bottom,
+        var(--azul) 0%,
+        var(--azul) 40%,
+        var(--fundo) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* ---------- Cards sobem por cima do final do gradiente ---------- */
+.cards {
+    display: flex;
+    gap: 16px;
+    max-width: 1180px;
+    margin: -120px auto 0;
+    padding: 0 16px;
+    position: relative;
+}
+
+.card {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    height: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 768px) {
+    .topo {
+        padding: 12px 16px;
+    }
+
+    .promo,
+    .categorias {
+        display: none;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        height: auto;
+    }
+}
