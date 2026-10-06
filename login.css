@@ -1,3 +1,4 @@
+```css
 /* ---------- Reset e variáveis ---------- */ 
 * { 
     margin: 0; 
@@ -48,7 +49,7 @@ body {
     max-width: 400px; 
     background: white; 
     padding: 35px; 
-    border-radius:10px; 
+    border-radius: 10px; 
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);  
 } 
  
@@ -156,7 +157,7 @@ body {
 /* ---------- Responsivo ---------- */  
 @media (max-width: 500px) {  
     .topo {  
-        padding: 16px 20px; 
+        padding: 30px 20px; 
     }  
      
     .area-cadastro { 
@@ -167,3 +168,4 @@ body {
         padding: 25px 20px; 
     }  
 }
+```
