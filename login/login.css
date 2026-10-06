@@ -1,0 +1,160 @@
+/* ---------- Reset e variáveis ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --azul: #588EF0;
+    --fundo: #f5f5f5;
+}
+
+body {
+    background: var(--fundo);
+    min-height: 100vh;
+}
+
+.topo {
+    background: var(--azul);
+    padding: 18px 40px;
+
+}
+
+.logo {
+    color: wwhite;
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.area-cadastro {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.caixa-cadastro {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 35px;
+    border-radius:10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.caixa-cadastro h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17px;
+}
+
+.campo label {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo input[type="password"] {
+    width: 100%;
+     padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+       outline: none;
+        font-size: 14px;
+         transition: 0.2s;
+}
+
+.campo input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 2px rgba(88, 142, 240, 0.15);
+}
+
+.termos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0 20px;
+}
+
+.termos input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.termos label { 
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-cadastro {
+    width: 100%;
+    border: none;
+    background: var(--azul);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cadastrar:hover { background: #477fe5; } 
+
+.btn-cadastrar:active { transform: scale(0.98); }
+
+
+.login { 
+    text-align: center;
+    margin-top: 22px;
+    color: #666; 
+    font-size: 14px;
+}
+
+.login a { 
+    color: var(--azul); 
+    font-weight: bold; 
+    text-decoration: none; 
+}
+
+.login a:hover { text-decoration: underline; }
+
+
+
+/* ---------- Responsivo ---------- */ 
+@media (max-width: 500px) { 
+    .topo { 
+        padding: 16px 20px; 
+    } 
+    
+    .area-cadastro {
+        padding: 25px 15px;
+    } 
+    .caixa-cadastro { 
+        padding: 25px 20px; 
+    } 
+}
