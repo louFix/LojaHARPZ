@@ -5,7 +5,7 @@ const produtos = {
         nome: "Placa mãe AORUS B550",
         preco: 399.90,
         estoque: 12,
-        imagens: ["imagens/b550 1.webp", "/imagens/b550 2.webp", "/imagens/b550 3.webp"],
+        imagens: ["imagens/b550 1.webp", "imagens/b550 2.webp", "imagens/b550 3.webp"],
         descricao: "Placa-mãe B550 para processadores AMD, com suporte a memória DDR4 e PCIe 4.0."
     },
     corsair: {
