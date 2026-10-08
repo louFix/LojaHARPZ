@@ -5,63 +5,63 @@ const produtos = {
         nome: "Placa mãe AORUS B550",
         preco: 399.90,
         estoque: 12,
-        imagens: ["/imagens/b550 1.webp", "/imagens/b550 2.webp", "/imagens/b550 3.webp"],
+        imagens: ["imagens/b550 1.webp", "/imagens/b550 2.webp", "/imagens/b550 3.webp"],
         descricao: "Placa-mãe B550 para processadores AMD, com suporte a memória DDR4 e PCIe 4.0."
     },
     corsair: {
         nome: "Fonte Corsair RM1000e",
         preco: 549.90,
         estoque: 8,
-        imagens: ["/imagens/Fonte CORSAIR RMe Series RM1000e 1.webp"],
+        imagens: ["imagens/Fonte CORSAIR RMe Series RM1000e 1.webp"],
         descricao: "Fonte modular de 1000W com certificação 80 Plus Gold e operação silenciosa."
     },
     msi650: {
         nome: "Fonte MSI MAG A650BN",
         preco: 399.00,
         estoque: 15,
-        imagens: ["/imagens/Fonte MSI MAG A650BN 0.webp"],
+        imagens: ["imagens/Fonte MSI MAG A650BN 0.webp"],
         descricao: "Fonte de 650W com certificação 80 Plus Bronze, ideal para PCs de uso geral e games."
     },
     ram16: {
         nome: "Memória RAM Rise Mode Z, 16GB",
         preco: 359.90,
         estoque: 20,
-        imagens: ["/imagens/Memória RAM Rise Mode Z, 16GB 1.webp"],
+        imagens: ["imagens/Memória RAM Rise Mode Z, 16GB 1.webp"],
         descricao: "Memória RAM de 16GB para desktop, com ótimo desempenho em jogos e multitarefa."
     },
     rtx5070: {
         nome: "Placa de Vídeo Gigabyte RTX 5070",
         preco: 5700.99,
         estoque: 4,
-        imagens: ["/imagens/Placa de Vídeo Gigabyte RTX 5070 1.webp"],
+        imagens: ["imagens/Placa de Vídeo Gigabyte RTX 5070 1.webp"],
         descricao: "Placa de vídeo NVIDIA RTX 5070 para jogos em alta resolução e ray tracing."
     },
     ryzen7: {
         nome: "Processador Ryzen 7",
         preco: 2000.00,
         estoque: 10,
-        imagens: ["/imagens/ryzen 7 1.webp"],
+        imagens: ["imagens/ryzen 7 1.webp"],
         descricao: "Processador AMD Ryzen 7 de 8 núcleos, excelente para jogos e produtividade."
     },
     rx7600: {
         nome: "Placa de vídeo RX 7600",
         preco: 1980.99,
         estoque: 7,
-        imagens: ["/imagens/rx7600 1.webp"],
+        imagens: ["imagens/rx7600 1.webp"],
         descricao: "Placa de vídeo AMD Radeon RX 7600, ótima para jogos em Full HD."
     },
     rtx5080: {
         nome: "Placa de Vídeo RTX 5080",
         preco: 7900.99,
         estoque: 3,
-        imagens: ["/imagens/rtx 5080 1.webp"],
+        imagens: ["imagens/rtx 5080 1.webp"],
         descricao: "Placa de vídeo NVIDIA RTX 5080 de alto desempenho para 4K."
     },
     watercooler: {
         nome: "Water Cooler MSI MAG Coreliquid A12",
         preco: 1500.00,
         estoque: 6,
-        imagens: ["/imagens/Water Cooler MSI MAG Coreliquid A12 1.webp"],
+        imagens: ["imagens/Water Cooler MSI MAG Coreliquid A12 1.webp"],
         descricao: "Water cooler com radiador e ventoinhas de alto fluxo para manter o processador frio."
     }
 };
