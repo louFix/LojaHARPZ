@@ -10,14 +10,16 @@
 
     <header class="topo">
         <div class="topo-principal">
-            <a href="#" class="logo">Harpz</a>
-            
+            <a href="#" class="logo">
+                <img src="/imagens/harpz-logo.png" alt="Harpz">
+            </a>
+
             <form class="busca" action="#">
                 <input type="text" placeholder="Buscar produtos, marcas e muito mais...">
                 <button type="submit">Pesquisar</button>
             </form>
 
-            <span class="promo">Frete grátis na 1ª compra</span>
+            <span class="promo">Frete grátis na 1ª compra mas a gente não entrega</span>
         </div>
 
         <nav class="menu">
@@ -34,7 +36,7 @@
             <ul class="usuario">
                 <li><a href="login.html">Crie a sua conta</a></li>
                 <li><a href="index.html">Entre</a></li>
-                <li><a href="carrinho.html">Compras</a></li>
+                <li><a href="pagamento.html">Compras</a></li>
                 <li>
                     <button class="btn-carrinho" type="button" aria-label="Carrinho de compras">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -48,11 +50,107 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-conteudo">
-            <h2>Nos não sabe codar</h2>
+    <main>
+        <section class="hero">
+            <div class="hero-conteudo">
+                <h2>Bem vindo a HARPZ, Escolha o seu produto</h2>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="card" onclick="abrirModal('b550')">
+                <img src="/imagens/b550 1.webp" alt="Placa-mãe B550">
+                <h3>Placa mãe AORUS</h3>
+                <p>R$ 399,90</p>
+            </div>
+
+            <div class="card" onclick="abrirModal('corsair')">
+                <img src="/imagens/Fonte CORSAIR RMe Series RM1000e 1.webp" alt="Fonte Corsair RMe Series RM1000e">
+                <h3>Fonte Corsair Series RM1000e</h3>
+                <p>R$ 549,90</p>
+            </div>
+
+            <div class="card" onclick="abrirModal('msi650')">
+                <img src="/imagens/Fonte MSI MAG A650BN 0.webp" alt="Fonte MSI MAG A650BN">
+                <h3>Fonte MSI MAG A650BN</h3>
+                <p>R$ 399,00</p>
+            </div>
+        </section>
+
+        <section class="espaco"></section>
+
+        <section class="cards">
+            <div class="card" onclick="abrirModal('ram16')">
+                <img src="/imagens/Memória RAM Rise Mode Z, 16GB 1.webp" alt="Memória RAM Rise Mode Z, 16GB">
+                <h3>Memória RAM Rise Mode Z, 16GB</h3>
+                <p>R$ 359,90</p>
+            </div>
+
+            <div class="card" onclick="abrirModal('rtx5070')">
+                <img src="/imagens/Placa de Vídeo Gigabyte RTX 5070 1.webp" alt="Placa de Vídeo Gigabyte RTX 5070">
+                <h3>Placa de Vídeo Gigabyte RTX 5070</h3>
+                <p>R$ 5.700,99</p>
+            </div>
+
+            <div class="card" onclick="abrirModal('ryzen7')">
+                <img src="/imagens/ryzen 7 1.webp" alt="Processador Ryzen 7">
+                <h3>Processador Ryzen 7</h3>
+                <p>R$ 2.000,00</p>
+            </div>
+        </section>
+
+        <section class="espaco"></section>
+
+        <section class="cards">
+            <div class="card" onclick="abrirModal('rx7600')">
+                <img src="/imagens/rx7600 1.webp" alt="Placa de vídeo RX 7600">
+                <h3>Placa de vídeo RX 7600</h3>
+                <p>R$ 1.980,99</p>
+            </div>
+
+            <div class="card" onclick="abrirModal('rtx5080')">
+                <img src="/imagens/rtx 5080 1.webp" alt="Placa de Vídeo RTX 5080">
+                <h3>Placa de Vídeo RTX 5080</h3>
+                <p>R$ 7.900,99</p>
+            </div>
+
+            <div class="card" onclick="abrirModal('watercooler')">
+                <img src="/imagens/Water Cooler MSI MAG Coreliquid A12 1.webp" alt="Water Cooler MSI MAG Coreliquid A12">
+                <h3>Water Cooler MSI MAG Coreliquid A12</h3>
+                <p>R$ 1.500,00</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal do produto (um só, preenchido pelo JavaScript) -->
+    <div id="modalProduto" class="modal" aria-hidden="true">
+        <div class="modal-conteudo" role="dialog" aria-modal="true" aria-labelledby="nomeProduto">
+            <button class="fechar" type="button" onclick="fecharModal()" aria-label="Fechar">&times;</button>
+
+            <div class="modal-produto">
+                <div class="modal-imagem">
+                    <img id="imagemProduto" src="" alt="">
+                    <div id="miniaturas" class="miniaturas"></div>
+                </div>
+
+                <div class="modal-info">
+                    <h2 id="nomeProduto"></h2>
+                    <p id="descricaoProduto"></p>
+                    <p id="precoProduto"></p>
+
+                    <p class="estoque">Estoque: <span id="estoqueProduto"></span></p>
+
+                    <div class="quantidade">
+                        <button type="button" onclick="diminuirQuantidade()" aria-label="Diminuir quantidade">-</button>
+                        <span id="quantidade">1</span>
+                        <button type="button" onclick="aumentarQuantidade()" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                    <button class="btn-comprar" type="button" onclick="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
     <script src="index.js"></script>
 </body>
