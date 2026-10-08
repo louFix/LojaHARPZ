@@ -1,0 +1,323 @@
+/* ==========================================================
+   Pagamento - tema do index (arquivo independente)
+   ========================================================== */
+
+/* ---------- Reset e variáveis ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --azul: #588EF0;
+    --fundo: #f5f5f5;
+}
+
+/* Fundo: azul descendo até o fundo da página (igual ao .hero) */
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        var(--azul) 0,
+        var(--azul) 200px,
+        var(--fundo) 460px
+    );
+    background-color: var(--fundo);
+}
+
+/* ---------- Barra superior ---------- */
+.topo {
+    background: var(--azul);
+    color: white;
+    padding: 16px 40px;
+}
+
+.topo-principal {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.promo {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* ---------- Layout: blocos sobem por cima do gradiente ---------- */
+.checkout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 16px;
+    max-width: 1180px;
+    margin: 30px auto;
+    padding: 0 16px;
+    align-items: start;
+    position: relative;
+}
+
+.bloco,
+.resumo {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bloco {
+    margin-bottom: 16px;
+}
+
+.bloco h2,
+.resumo h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+/* ---------- Etapas aparecendo em sequência ---------- */
+.revelar {
+    animation: entrar 0.35s ease;
+}
+
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Etapa preenchida ganha um check verde */
+.bloco.concluida h2::after {
+    content: " ✓";
+    color: green;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .revelar {
+        animation: none;
+    }
+}
+
+/* ---------- Campos ---------- */
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.campos label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    color: #666;
+}
+
+.campos .largo {
+    grid-column: 1 / -1;
+}
+
+.campos input,
+.campos select {
+    padding: 11px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campos input:focus,
+.campos select:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(88, 142, 240, 0.2);
+}
+
+/* ---------- Métodos de pagamento ---------- */
+.metodos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.metodo {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #666;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.metodo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.metodo input {
+    display: none;
+}
+
+.metodo:has(input:checked) {
+    border-color: var(--azul);
+    background: rgba(88, 142, 240, 0.1);
+    color: var(--azul);
+}
+
+.painel p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.destaque {
+    margin-top: 8px;
+    color: green !important;
+    font-weight: bold;
+}
+
+/* ---------- Botão ---------- */
+.btn-finalizar {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: var(--azul);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-finalizar:hover {
+    background: #4078df;
+}
+
+.mensagem {
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.mensagem.ok {
+    background: #e6f6ec;
+    color: green;
+}
+
+.mensagem.erro {
+    background: #fdeaea;
+    color: #b42318;
+}
+
+/* ---------- Resumo ---------- */
+.resumo {
+    position: sticky;
+    top: 20px;
+}
+
+.produto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+
+.produto > div:nth-child(2) {
+    flex: 1;
+}
+
+.produto p {
+    color: #666;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.produto-img {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fundo);
+    border-radius: 8px;
+    font-size: 28px;
+}
+
+.totais {
+    list-style: none;
+    margin-top: 14px;
+    font-size: 14px;
+    color: #666;
+}
+
+.totais li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+
+.totais .total {
+    margin-top: 6px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--azul);
+}
+
+.verde {
+    color: green;
+    font-weight: bold;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 768px) {
+    .topo {
+        padding: 12px 16px;
+    }
+
+    .promo {
+        display: none;
+    }
+
+    .checkout {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo {
+        order: -1;
+        position: static;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .metodos {
+        flex-direction: column;
+    }
+}

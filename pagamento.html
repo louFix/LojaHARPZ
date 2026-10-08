@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento | Harpz</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="topo-principal">
+            <a href="/pagina index/index.html" class="logo">Harpz</a>
+            <span class="promo"> Compra segura</span>
+        </div>
+    </header>
+
+    <main class="checkout">
+
+        <form id="form-pagamento" class="checkout-form">
+
+            <section class="bloco" id="etapa-1">
+                <h2>1. Seus dados</h2>
+                <div class="campos">
+                    <label>Nome completo
+                        <input type="text" name="nome" minlength="2" required>
+                    </label>
+                    <label>CPF
+                        <input type="text" name="cpf" inputmode="numeric" maxlength="14" placeholder="000.000.000-00"
+                               pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Use o formato 000.000.000-00" required>
+                    </label>
+                    <label>E-mail
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>Telefone
+                        <input type="tel" name="telefone" placeholder="(11) 90000-0000"
+                               pattern="\(\d{2}\) \d{5}-\d{3,4}" title="Use o formato (11) 90000-0000" required>
+                    </label>
+                </div>
+            </section>
+
+            <section class="bloco" id="etapa-2" hidden>
+                <h2>2. Endereço de entrega</h2>
+                <div class="campos">
+                    <label>CEP
+                        <input type="text" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000"
+                               pattern="\d{5}-\d{3}" title="Use o formato 00000-000" required>
+                    </label>
+                    <label>Rua
+                        <input type="text" name="rua" minlength="2" required>
+                    </label>
+                    <label>Número
+                        <input type="text" name="numero" required>
+                    </label>
+                    <label>Cidade
+                        <input type="text" name="cidade" minlength="2" required>
+                    </label>
+                </div>
+            </section>
+
+            <section class="bloco" id="etapa-3" hidden>
+                <h2>3. Forma de pagamento</h2>
+
+                <div class="metodos">
+                    <label class="metodo">
+                        <input type="radio" name="metodo" value="pix"> Pix
+                    </label>
+                    <label class="metodo">
+                        <input type="radio" name="metodo" value="cartao"> Cartão
+                    </label>
+                    <label class="metodo">
+                        <input type="radio" name="metodo" value="boleto"> Boleto
+                    </label>
+                </div>
+
+                <div id="painel-pix" class="painel" hidden>
+                    <p>Ao finalizar, vamos gerar um QR Code para você pagar no app do seu banco.</p>
+                    <p class="destaque">5% de desconto no Pix</p>
+                </div>
+
+                <div id="painel-cartao" class="painel" hidden>
+                    <div class="campos">
+                        <label class="largo">Número do cartão
+                            <input type="text" id="cartao-numero" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000">
+                        </label>
+                        <label class="largo">Nome impresso no cartão
+                            <input type="text" id="cartao-nome">
+                        </label>
+                        <label>Validade
+                            <input type="text" id="cartao-validade" maxlength="5" placeholder="MM/AA">
+                        </label>
+                        <label>CVV
+                            <input type="text" id="cartao-cvv" inputmode="numeric" maxlength="4" placeholder="000">
+                        </label>
+                        <label class="largo">Parcelas
+                            <select id="parcelas"></select>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="painel-boleto" class="painel" hidden>
+                    <p>O boleto será gerado ao finalizar e vence em 3 dias úteis. O pedido é enviado após a confirmação do pagamento.</p>
+                </div>
+            </section>
+
+            <button type="submit" id="btn-finalizar" class="btn-finalizar" hidden>Finalizar compra</button>
+            <p id="mensagem" class="mensagem" hidden></p>
+        </form>
+
+        <aside class="resumo">
+            <h2>Resumo do pedido</h2>
+
+            <div class="produto">
+                <div class="produto-img">🎧</div>
+                <div>
+                    <strong>Headset Gamer Harpz</strong>
+                    <p>Quantidade: 1</p>
+                </div>
+                <span>R$ 299,90</span>
+            </div>
+
+            <ul class="totais">
+                <li><span>Subtotal</span> <span id="subtotal">R$ 299,90</span></li>
+                <li><span>Frete</span> <span class="verde">Grátis</span></li>
+                <li id="linha-desconto" hidden><span>Desconto Pix (5%)</span> <span class="verde" id="desconto">- R$ 15,00</span></li>
+                <li class="total"><span>Total</span> <span id="total">R$ 299,90</span></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <script src="pagamento.js"></script>
+</body>
+</html>
