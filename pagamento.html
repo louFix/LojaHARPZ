@@ -107,24 +107,16 @@
             <button type="submit" id="btn-finalizar" class="btn-finalizar" hidden>Finalizar compra</button>
             <p id="mensagem" class="mensagem" hidden></p>
         </form>
-
         <aside class="resumo">
             <h2>Resumo do pedido</h2>
 
-            <div class="produto">
-                <div class="produto-img">🎧</div>
-                <div>
-                    <strong>Headset Gamer Harpz</strong>
-                    <p>Quantidade: 1</p>
-                </div>
-                <span>R$ 299,90</span>
-            </div>
+            <div id="lista-produtos"></div>
 
             <ul class="totais">
-                <li><span>Subtotal</span> <span id="subtotal">R$ 299,90</span></li>
+                <li><span>Subtotal</span> <span id="subtotal">R$ 0,00</span></li>
                 <li><span>Frete</span> <span class="verde">Grátis</span></li>
-                <li id="linha-desconto" hidden><span>Desconto Pix (5%)</span> <span class="verde" id="desconto">- R$ 15,00</span></li>
-                <li class="total"><span>Total</span> <span id="total">R$ 299,90</span></li>
+                <li id="linha-desconto" hidden><span>Desconto Pix (5%)</span> <span class="verde" id="desconto"></span></li>
+                <li class="total"><span>Total</span> <span id="total">R$ 0,00</span></li>
             </ul>
         </aside>
 
