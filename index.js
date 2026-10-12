@@ -152,25 +152,34 @@ function diminuirQuantidade() {
 /* ---------- Carrinho ---------- */
 function adicionarAoCarrinho() {
     const dados = produtos[produtoAtual];
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    // se o valor salvo estiver corrompido, começa com o carrinho vazio
+    let carrinho;
+    try {
+        carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    } catch {
+        carrinho = [];
+    }
 
     const item = carrinho.find((i) => i.id === produtoAtual);
     if (item) {
         item.quantidade = Math.min(item.quantidade + quantidadeAtual, dados.estoque);
+        item.estoque = dados.estoque; // atualiza itens salvos antes sem esse campo
     } else {
         carrinho.push({
             id: produtoAtual,
             nome: dados.nome,
             preco: dados.preco,
             imagem: dados.imagens[0],
+            estoque: dados.estoque,
             quantidade: quantidadeAtual
         });
     }
 
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-    alert(`${quantidadeAtual} x ${dados.nome} adicionado(s) ao carrinho!`);
-    fecharModal();
+    // leva a pessoa direto para a página do carrinho
+    window.location.href = "carrinho.html";
 }
 
 
@@ -183,4 +192,7 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") fecharModal();
 });
 
-document.getElementById('ano').textContent = new Date().getFullYear();
+
+/* ---------- Ano do rodapé ---------- */
+const anoEl = document.getElementById("ano");
+if (anoEl) anoEl.textContent = new Date().getFullYear();
