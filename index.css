@@ -386,3 +386,81 @@ body {
         height: 200px;
     }
 }
+
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    margin-top: 80px;
+    background: var(--azul);
+    color: white;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 16px;
+}
+
+.rodape-marca {
+    max-width: 280px;
+}
+
+.rodape-marca img {
+    display: block;
+    height: 70px;
+    width: auto;
+    margin-bottom: 12px;
+}
+
+.rodape-marca p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.rodape-coluna h4 {
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+
+.rodape-coluna ul {
+    list-style: none;
+}
+
+.rodape-coluna li + li {
+    margin-top: 10px;
+}
+
+.rodape-coluna a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.rodape-coluna a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.rodape-coluna a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.rodape-base {
+    padding: 16px;
+    background: var(--azul-escuro);
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        flex-direction: column;
+        gap: 28px;
+    }
+}
