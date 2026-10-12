@@ -1,8 +1,42 @@
-const PRECO = 299.90;
-
 const moeda = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 const soDigitos = (s) => s.replace(/\D/g, "");
+const escapar = (t) =>
+    String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
+/* ---------- Carrinho (lido do localStorage, salvo pelo index.js) ---------- */
+function lerCarrinho() {
+    try {
+        const dados = JSON.parse(localStorage.getItem("carrinho"));
+        return Array.isArray(dados)
+            ? dados.filter((i) => i && i.id && i.preco >= 0 && i.quantidade > 0)
+            : [];
+    } catch {
+        return [];
+    }
+}
+
+const itens = lerCarrinho();
+
+// sem itens, não há o que pagar: volta para o carrinho
+if (itens.length === 0) {
+    window.location.replace("carrinho.html");
+}
+
+const PRECO = itens.reduce((soma, i) => soma + i.preco * i.quantidade, 0);
+
+document.getElementById("lista-produtos").innerHTML = itens.map((i) => `
+    <div class="produto">
+        <div class="produto-img">${i.imagem ? `<img src="${escapar(i.imagem)}" alt="">` : "📦"}</div>
+        <div>
+            <strong>${escapar(i.nome)}</strong>
+            <p>Quantidade: ${i.quantidade}</p>
+        </div>
+        <span>${moeda(i.preco * i.quantidade)}</span>
+    </div>`).join("");
+
+document.getElementById("subtotal").textContent = moeda(PRECO);
+
+/* ---------- Elementos ---------- */
 const form = document.getElementById("form-pagamento");
 const etapas = [
     document.getElementById("etapa-1"),
@@ -150,5 +184,7 @@ form.addEventListener("submit", (e) => {
     }
 
     // Aqui entraria a chamada ao back-end / gateway de pagamento.
+    localStorage.removeItem("carrinho"); // pedido feito: esvazia o carrinho
+    botao.disabled = true;               // evita enviar duas vezes
     mostrar("Pedido recebido! Em breve você receberá a confirmação por e-mail.", "ok");
 });
