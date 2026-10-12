@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho | Harpz</title>
+    <link rel="stylesheet" href="/carrinho/carrinho.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="topo-principal">
+            <a href="/pagina index/index.html" class="logo">Harpz</a>
+            <span class="promo">Compra segura</span>
+        </div>
+    </header>
+
+    <main class="checkout">
+
+        <section class="bloco">
+            <div class="cabecalho-lista">
+                <h2>Meu carrinho</h2>
+                <button type="button" id="btn-limpar" class="btn-texto" hidden>Esvaziar carrinho</button>
+            </div>
+            <div id="itens"></div>
+        </section>
+
+        <aside class="resumo">
+            <h2>Resumo da compra</h2>
+
+            <ul class="totais">
+                <li><span id="rotulo-produtos">Produtos</span> <span id="subtotal">R$ 0,00</span></li>
+                <li><span>Frete</span> <span class="verde">Grátis</span></li>
+                <li class="total"><span>Total</span> <span id="total">R$ 0,00</span></li>
+            </ul>
+            <p class="dica-pix">Pague no Pix e ganhe 5% de desconto.</p>
+
+            <a href="/pagamento /pagamento.html" id="btn-continuar" class="btn-finalizar desativado">Continuar para o pagamento</a>
+            <a href="/pagina index/index.html" class="link-voltar">← Continuar comprando</a>
+        </aside>
+
+    </main>
+
+    <script src="carrinho-storage.js"></script>
+    <script src="carrinho.js"></script>
+</body>
+</html>
