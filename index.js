@@ -182,3 +182,5 @@ modal.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") fecharModal();
 });
+
+document.getElementById('ano').textContent = new Date().getFullYear();
