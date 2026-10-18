@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/Contato/contato.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="logo" href="/pagina index/index.html" aria-label="Harpz - página inicial"><img src="/imagens/harpz-logo.png" alt="Harpz" width="59" height="86"></a>
+  <header>
+    <h1>Como podemos ajudar?</h1>
+    <p>Escolha o canal que for mais fácil para você. Respondemos em até 1 dia útil.</p>
+  </header>
+
+  <div class="channels">
+    <!-- TROQUE 5511999999999 pelo seu número (código do país + DDD + número) -->
+    <a class="ch wa" href="https://wa.me/5511999999999" target="_blank" rel="noopener"><b>WhatsApp</b><span>(11) 99999-9999</span></a>
+    <a class="ch" href="mailto:contato@seusite.com.br"><b>E-mail</b><span>contato@seusite.com.br</span></a>
+    <a class="ch" href="tel:+551140000000"><b>Telefone</b><span>(11) 4000-0000</span></a>
+  </div>
+
+  <div class="panel">
+    <aside>
+      <h2>Atendimento</h2>
+      <p>Segunda a sexta, das 9h às 18h.<br>Sábado, das 9h às 13h.</p>
+      <p><span class="tag">Resposta rápida pelo WhatsApp</span></p>
+    </aside>
+
+    <form id="f" novalidate>
+      <div class="row">
+        <label>Nome<input name="nome" autocomplete="name" required></label>
+        <label>Telefone / WhatsApp<input name="tel" type="tel" autocomplete="tel" required></label>
+      </div>
+      <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+      <label>Assunto
+        <select name="assunto">
+          <option>Dúvida sobre produto</option>
+          <option>Acompanhar pedido</option>
+          <option>Troca ou devolução</option>
+          <option>Orçamento para atacado</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <label>Mensagem<textarea name="msg" required></textarea></label>
+      <div class="actions">
+        <button type="button" class="b-wa" data-via="wa">Enviar pelo WhatsApp</button>
+        <button type="button" class="b-mail" data-via="mail">Enviar por e-mail</button>
+      </div>
+      <p id="msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<footer class="rodape">
+  <div class="rodape-main">
+    <div class="rodape-marca">
+      <a href="/" aria-label="Harpz - página inicial"><img src="/imagens/harpz-logo.png" alt="Harpz" width="41" height="60"></a>
+      <p>Hardware e periféricos para o seu setup.</p>
+    </div>
+    <nav class="rodape-cols" aria-label="Rodapé">
+      <div>
+        <h2>Ajuda</h2>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div>
+        <h2>Sobre</h2>
+        <button type="button" class="card-criadores" id="abrir-criadores" aria-haspopup="dialog">Criadores</button>
+      </div>
+    </nav>
+  </div>
+  <div class="rodape-copy">© <span id="ano">2026</span> Harpz. Todos os direitos reservados.</div>
+</footer>
+
+<dialog id="criadores" aria-labelledby="criadores-titulo">
+  <div class="modal-card">
+    <button type="button" class="fechar" id="fechar-criadores" aria-label="Fechar">×</button>
+    <h2 id="criadores-titulo">Criadores</h2>
+    <p class="modal-sub">As pessoas por trás do site da Harpz.</p>
+    <!-- TROQUE os nomes, funções e iniciais abaixo pelos dos criadores reais -->
+    <ul class="lista-criadores">
+      <li><span class="avatar">FJ</span><div><b>Flavio Lima da Silva Lou Junior</b><span>Desenvolvimento</span></div></li>
+      <li><span class="avatar">VF</span><div><b>Vinicius Ferreira Padilha</b><span>Design</span></div></li>
+       <li><span class="avatar">EJ</span><div><b>Eric Jose Cavalcante</b><span>Design</span></div></li>
+      <li><span class="avatar">BS</span><div><b>Bruna Bessera</b><span>Conteúdo e vendas</span></div></li>
+    </ul>
+  </div>
+</dialog>
+
+<script src="/Contato/contato.js"></script>
+</body>
+</html>
